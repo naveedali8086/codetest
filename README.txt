@@ -54,7 +54,7 @@ Thank you!
 | 2. How would you have done it.
 |
 
-2. No code segregation was used. Everything was just from Controller to Repository i.e.
+2. No code segregation was used. Everything was just moved from Controller to Repository i.e.
 - Form request may be used for validation and data modification if needed
 - No Policy class was used for authorization
 - No $cast property or accessor/mutators were defined for job model and all was being achieved using if-else
@@ -68,14 +68,13 @@ leading to inconsistent data
 4. Inconsistent response format from controllers/repository
 
 4. String based constants does not have single source of truth, they are hardcoded everywhere in code, instead
-Enums could be utilized. I have added for understanding (obviously they are incomplete), consequently making
-code difficult to read, understand and manage
+Enums could be utilized, consequently making code difficult to read, understand and manage. 
+I have added for understanding (obviously they are incomplete)
 
 5. Try/Catch were almost missed neither the Handler.php was found that is handling all exceptions in app
 and generating consistent response
 
-6. Too much redundant code was found for getting jobs i.e.
-messages should be set in translation files
+6. Too much redundant code was found for getting jobs i.e. to fetch jobs 3 methods almost had the check long longs queries and checks
 
 7. No use of laravel form requests was found and all the needed data modification was done right in repository
 method i.e. store() of booking controller
@@ -93,7 +92,7 @@ modified by system as well as allow caching
 12. Some methods are very much large i.e. update() of BookingController, that is making it very difficult
 to understand
 
-13. Naming convention is als not good at some places i.e. cancelJobAjax
+13. Naming convention is als not good at some places i.e. cancelJobAjax and there are others as well
 
 14. So much if-else nesting was used in some of the methods, making them very difficult to understand and work with
 
